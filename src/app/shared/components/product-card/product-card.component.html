@@ -1,0 +1,16 @@
+<div class="g-3 mb-5 product-wrapper">
+  <div>
+    <div class="product-card card shadow-sm">
+      <div *ngIf="product.image">
+        <img class="bd-placeholder-img card-img-top" src="{{product.image}}">
+      </div>
+      <div class="card-body">
+        <h2 class="fs-4 fw-normal fw-bold pb-1">{{product.title}}</h2>
+        <p class="card-text">{{product.description | shortText}}</p>
+        <a type="button" routerLink="/products" [routerLink]="['/products', product.id]"
+                class="btn btn-secondary bg-primary border-primary hvr-grow-shadow">Подробнее
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

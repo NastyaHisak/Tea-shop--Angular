@@ -1,0 +1,55 @@
+@use 'node_modules/@ngneat/hot-toast/src/styles/styles.scss';
+html, body{
+  min-height: 100%;
+  margin: 0;
+}
+app-root, app-layout{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+router-outlet, app-product, app-order{
+  flex: 1 1 auto;
+}
+footer-component{
+  margin-top: auto;
+}
+.ui-state-active .accordion-arrow{
+  transform: rotate(180deg);
+}
+
+.hvr-fade:hover{
+  background: #0458d6 !important;
+}
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched{
+  border-color: red;
+}
+.invalid-feedback {
+  display: block;
+}
+.success-order{
+  display: none;
+  color: #0ad003;
+  font-size: 40px;
+  padding: 50px;
+  text-align: center;
+}
+/*.app-root, body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}*/
+.order, .product-wrapper{
+  padding-top: 20px;
+  height: calc(100% - 96px);
+}
+.product-wrapper{
+  height: calc(100% - 125px);
+
+}
+
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

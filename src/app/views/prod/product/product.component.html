@@ -1,0 +1,19 @@
+<div class="g-3 mb-5 product-wrapper d-flex justify-content-center">
+  <div>
+    <div class="product-card align-items-center container">
+      <div class="product-img" *ngIf="product.image">
+        <img class="product-img bd-placeholder-img card-img-top" src="{{product.image}}">
+      </div>
+      <div class="card-body">
+        <h2 class="fs-4 fw-normal fw-bold pb-1">{{product.title}}</h2>
+        <p class="card-text">{{product.description}}</p>
+        <div class="product-price">{{product.price}} <span>руб/кг</span></div>
+        <a type="button"
+           class="btn btn-secondary bg-primary border-primary hvr-grow-shadow"
+           routerLink="/order" [queryParams]="{product: product.title}">Купить
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+

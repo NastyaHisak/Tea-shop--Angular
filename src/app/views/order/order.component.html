@@ -1,0 +1,83 @@
+<div class="order">
+  <div class="container form-inner mb-5 col-xl-5" id="orderForm">
+    <h2 class="fs-2 fw-bold text-center mb-5">Сделать заказ</h2>
+    <form [formGroup]="createOrderForm" class="needs-validation container-sm col-xl-10" (ngSubmit)="createOrder()">
+      <div class="row gx-4 gy-2">
+
+        <div class="col-lg-6">
+          <label for="country" class="form-label">Товар</label>
+          <input type="text" class="form-control" id="product-order" formControlName="product" [(ngModel)]="formValues.product">
+        </div>
+
+        <div class="col-lg-6">
+          <label for="index" class="form-label">Комментарий к заказу</label>
+          <input type="text" class="form-control" id="comment" name="comment" formControlName="comment">
+        </div>
+
+        <div class="col-lg-4">
+          <label for="firstName" class="form-label">Имя</label>
+          <input type="text" class="form-control" id="firstName" formControlName="firstName">
+
+          <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)">
+            <div class="text-danger invalid-feedback" *ngIf="firstName?.errors?.['required']">Firstname is required.</div>
+            <div class="text-danger invalid-feedback" *ngIf="firstName?.errors?.['pattern']">Firstname is incorrect.</div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <label for="lastName" class="form-label">Фамилия</label>
+          <input type="text" class="form-control" id="lastName" formControlName="lastName">
+
+          <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
+            <div class="text-danger invalid-feedback" *ngIf="lastName?.errors?.['required']">Lastname is required.</div>
+            <div class="text-danger invalid-feedback" *ngIf="lastName?.errors?.['pattern']">Lastname is incorrect.</div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <label for="phone" class="form-label">Телефон</label>
+          <input type="text" class="form-control" id="phone" formControlName="phone">
+
+          <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
+            <div class="text-danger invalid-feedback" *ngIf="phone?.errors?.['required']">Phone is required.</div>
+            <div class="text-danger invalid-feedback" *ngIf="phone?.errors?.['pattern']">Phone is incorrect.</div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <label for="country" class="form-label">Страна</label>
+          <input type="text" class="form-control" id="country" formControlName="country">
+
+          <div *ngIf="country?.invalid && (country?.dirty || country?.touched)">
+            <div class="text-danger invalid-feedback" *ngIf="country?.errors?.['required']">Country is required.</div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <label for="index" class="form-label">Индекс</label>
+          <input type="text" class="form-control" id="index" formControlName="index">
+
+          <div *ngIf="index?.invalid && (index?.dirty || index?.touched)">
+            <div class="text-danger invalid-feedback" *ngIf="index?.errors?.['required']">Index is required.</div>
+            <div class="text-danger invalid-feedback" *ngIf="index?.errors?.['pattern']">Index is incorrect.</div>
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <label for="address" class="form-label">Адрес</label>
+          <input type="text" class="form-control" id="address" formControlName="address">
+
+          <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+            <div class="text-danger invalid-feedback" *ngIf="address?.errors?.['required']">Address is required.</div>
+            <div class="text-danger invalid-feedback" *ngIf="address?.errors?.['pattern']">Address is incorrect.</div>
+          </div>
+        </div>
+
+      </div>
+      <button class="btn btn-primary bg-primary border-primary mt-3 hvr-fade" id="orderBtn"
+      [disabled]="createOrderForm.invalid || createOrderForm.disabled" >Отправить</button>
+      <div class="text-danger invalid-feedback" *ngIf="!isSuccess">Произошла ошибка. Попробуйте еще раз.</div>
+    </form>
+  </div>
+</div>
+
